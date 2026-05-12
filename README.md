@@ -1,2 +1,0 @@
-# traffic-light-AWBJHABWBJHAWKJwa
-boleh
