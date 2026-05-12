@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Light NI BOYEN</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            margin-top: 50px;
+            background-color: #f5f5f5;
+        }
+
+        img {
+            width: 200px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .boxx {
+            border-radius: 20px;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            background-color: #333;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        .btn-red { background-color: #ff4d4d; color: white; }
+        .btn-yellow { background-color: #ffcc00; }
+        .btn-green { background-color: #2eb82e; color: white; }
+        .All-On { background-color: black; color: white;}
+
+        img{
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Traffic Light ni Barney</h1>
+    
+    <div class="boxx">
+        <img id="stopp" src="https://preview.colorkit.co/color/d3d3d3.png?size=social&type=opengraph" alt="Traffic Light">
+        <h2 id="red">STOP</h2>
+
+        <img id="slowdown" src="https://preview.colorkit.co/color/d3d3d3.png?size=social&type=opengraph" alt="Traffic Light">
+        <h2 id="yellow">SLOW</h2>
+
+        <img id="GOO" src="https://preview.colorkit.co/color/d3d3d3.png?size=social&type=opengraph" alt="Traffic Light">
+        <h2 id="green">GO</h2>
+
+
+        <button class="btn-red" onclick="redLight()">Red Light</button>
+        <button class="btn-yellow" onclick="yellowLight()">Yellow Light</button>
+        <button class="btn-green" onclick="greenLight()">Green Light</button>
+        <button class="resetlight" onclick="resetlight()">Reset Button</button>
+        <button class="All-On" onclick="AllOn()">Toggle All on</button>
+    </div>
+
+    <script>
+        const offImg = "https://preview.colorkit.co/color/d3d3d3.png?size=social&type=opengraph"
+        const onImgred = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcDdYgpeC7yzO7WmAZKpy5ukFSJBrpVeA_A&s"
+        const onImgyellow = "https://colourlex.com/wp-content/uploads/2021/02/naples-yellow-painted-swatch.jpg"
+        const onImggreen  = "https://cdn11.bigcommerce.com/s-3uewkq06zr/images/stencil/1280x1280/products/235/440/fluorescent_green__89336.1492524804.png?c=2"
+
+        function redLight() {
+            document.getElementById("stopp").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcDdYgpeC7yzO7WmAZKpy5ukFSJBrpVeA_A&s";
+            document.getElementById("red").innerHTML = "STOP";
+
+            document.getElementById("slowdown").src = offImg;
+            document.getElementById("GOO").src = offImg;
+        }
+        function yellowLight() {
+            document.getElementById("slowdown").src = "https://colourlex.com/wp-content/uploads/2021/02/naples-yellow-painted-swatch.jpg";
+            document.getElementById("yellow").innerHTML = "SLOW";
+
+            document.getElementById("stopp").src = offImg;
+            document.getElementById("GOO").src = offImg;
+        }
+        function greenLight() {
+            document.getElementById("GOO").src = "https://cdn11.bigcommerce.com/s-3uewkq06zr/images/stencil/1280x1280/products/235/440/fluorescent_green__89336.1492524804.png?c=2";
+            document.getElementById("green").innerHTML = "GO";
+
+            document.getElementById("stopp").src = offImg;
+            document.getElementById("slowdown").src = offImg;
+        }
+
+        function resetlight()
+        {
+        document.getElementById("stopp").src = offImg;
+            document.getElementById("slowdown").src = offImg;
+            document.getElementById("GOO").src = offImg;
+        }
+
+        function AllOn() {
+            document.getElementById("stopp").src = onImgred;
+            document.getElementById("slowdown").src = onImgyellow;
+            document.getElementById("GOO").src = onImggreen;
+         }
+    </script>
+
+</body>
+</html>
